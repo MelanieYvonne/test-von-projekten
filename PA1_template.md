@@ -1,5 +1,5 @@
 ``` r
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, figures= TRUE)
+knitr::opts_chunk$set( fig.path = "images/")
 ```
 
 Reproducible Research: Peer Assessment 1
@@ -36,7 +36,7 @@ hist(
 )
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![](images/unnamed-chunk-3-1.png)
 
 ### mean /median
 
@@ -71,7 +71,7 @@ library(ggplot2)
 qplot(interval,steps, data=serien,geom="line",main ="5-minute interval")
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-5-1.png) Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+![](images/unnamed-chunk-5-1.png) Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ``` r
 serien[which.max(serien$steps),]
@@ -120,7 +120,7 @@ total <- tapply(full_data$steps, full_data$date, sum, na.rm=TRUE)
 hist(total, main = 'total number of steps taken each day', col = "red")
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-10-1.png) \#\#\# mean/median of the steps
+![](images/unnamed-chunk-10-1.png) \#\#\# mean/median of the steps
 
 ``` r
 mean1 <- mean(total, na.rm= TRUE)
@@ -161,4 +161,4 @@ ggplot(week_average_df, aes(interval, steps)) + geom_line(color = "purple3", lwd
         xlab("Interval: 5 minute") + ylab("Steps numbers") + facet_grid(day ~ .)
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-14-1.png)
+![](images/unnamed-chunk-14-1.png)
